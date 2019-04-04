@@ -7,7 +7,8 @@ var wrapLog = function (callback, name) {
     // function callback is called, because ou dont know wich function this is going to be, soh you use the argument name.
     // ... is called spread and it is used to go trough the arguments, it doesn matter how many they are - you can do that with arguments from a function or anythig else you want! - "take everything" and then you follow with where you need to take the things from, in this case, the arguments.
     // you are going to call the function that is callback with the variables from this function so basically, it is going to execute with all the original arguments it is supposed to use.
-    return `${name}(${Array.from(arguments)}) => ${callback(...arguments)}`
+    // return `${name}(${Array.from(arguments)}) => ${callback(...arguments)}`
+    return `${name}(${Array.from(arguments)}) => ${callback.apply(this, arguments)}`;
   }
 
 };
