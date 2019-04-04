@@ -1,10 +1,10 @@
 function makeLoadedDie() {
   var list = [5, 4, 6, 1, 6, 4, 2, 3, 3, 5];
-  var counter = -1; // store the value outside the function being called!
+  var counter = - 1; // store the value outside the function being called!
 
   return function() {
-    if(counter === list.lenght) {
-      counter = - 1;
+    if(counter === list.length -1) {
+      counter = 0;
     } else {
       counter ++;
     }
@@ -17,3 +17,12 @@ var rollLoadedDie = makeLoadedDie();
 console.log(rollLoadedDie());  // 5
 console.log(rollLoadedDie());  // 4
 console.log(rollLoadedDie());  // 6
+console.log(rollLoadedDie());  // 1
+console.log(rollLoadedDie());  // 6
+console.log(rollLoadedDie());  // 4
+console.log(rollLoadedDie());  // 2
+console.log(rollLoadedDie());  // 3
+console.log(rollLoadedDie());  // 3
+console.log(rollLoadedDie());  // 5
+console.log(rollLoadedDie());  // 5*
+console.log(rollLoadedDie());  // 4*
